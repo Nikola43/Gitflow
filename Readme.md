@@ -148,3 +148,9 @@ El flujo general de Gitflow es el siguiente:
 
 ## Librería para gestionar GitFlow
 [GitFlow cheatsheet](https://danielkummer.github.io/git-flow-cheatsheet/)
+
+## Más información
+[GitFlow: ¿Qué és y cómo aplicarlo sin morir en el intento?](https://gfourmis.co/gitflow-sin-morir-en-el-intento) \
+[IntroducingGitFlow](https://datasift.github.io/gitflow/IntroducingGitFlow.html) \
+[Que es git flow y como funciona](https://cleventy.com/que-es-git-flow-y-como-funciona/) \
+[The gitflow workflow - in less than 5 mins.](https://www.youtube.com/watch?v=1SXpE08hvGs) 

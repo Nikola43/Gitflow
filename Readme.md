@@ -141,7 +141,7 @@ El flujo general de Gitflow es el siguiente:
 1 - Se crea una rama de desarrollo a partir de la maestra.\
 2 - Una rama de publicación se crea a partir de la de desarrollo.\
 3 - Las ramas de función se crean a partir de la de desarrollo.\
-4 - Cuando una función está completa, se fusiona en la rama de desarrollo.\ 
+4 - Cuando una función está completa, se fusiona en la rama de desarrollo.\
 5 - Cuando la rama de publicación está lista, se fusiona en la de desarrollo y la maestra.\
 6 - Si se detecta una incidencia en la maestra, se crea una rama de corrección a partir de la maestra.\
 7 - Una vez que la corrección está completa, se fusiona tanto con la de desarrollo como con la maestra.\

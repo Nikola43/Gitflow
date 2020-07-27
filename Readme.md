@@ -1,6 +1,6 @@
-#Funcionamiento
+# Funcionamiento
 ![Funcionamiento](https://wac-cdn.atlassian.com/dam/jcr:2bef0bef-22bc-4485-94b9-a9422f70f11c/02%20(2).svg?cdnVersion=1146?raw=true "Funcionamiento")
-##Ramas de desarrollo y maestras
+## Ramas de desarrollo y maestras
 En vez de una única rama maestra, este flujo de trabajo utiliza dos ramas para registrar el historial del proyecto. La rama maestra almacena el historial de publicación oficial y la rama de desarrollo sirve como rama de integración para funciones. Asimismo, conviene etiquetar todas las confirmaciones de la rama maestra con un número de versión.
 
 El primer paso es complementar la maestra predeterminada con una rama de desarrollo. Una forma sencilla de hacerlo es que un desarrollador cree una rama de desarrollo vacía localmente y la envíe al servidor:
@@ -29,13 +29,13 @@ $ git branch
 * develop
  master
 ```
-##Ramas de función
+## Ramas de función
 Cada nueva función debe estar en su propia rama, que se puede enviar al repositorio central para copia de seguridad/colaboración. Sin embargo, en vez de ramificarse de la maestra, las ramas de función utilizan la de desarrollo como rama primaria. Cuando una función está completa, se vuelve a fusionar en la de desarrollo. Las funciones nunca deben interactuar directamente con la maestra.
 ![Ramas](https://wac-cdn.atlassian.com/dam/jcr:b5259cce-6245-49f2-b89b-9871f9ee3fa4/03%20(2).svg?cdnVersion=1146?raw=true "Ramas")
 Ten en cuenta que las ramas de función combinadas con la rama de desarrollo conforman, a todos efectos, el flujo de trabajo de rama de función. Sin embargo, el flujo de trabajo de Gitflow no termina aquí.
 
 Las ramas de función normalmente se crean a partir de la última rama de desarrollo.
-###Creación de una rama de función
+## Creación de una rama de función
 Sin las extensiones de git-flow:
 ```sh
 $ git checkout develop
@@ -46,7 +46,7 @@ Cuando se utiliza la extensión de git-flow:
 $ git flow feature start feature_branch
 ```
 Sigue trabajando y utiliza Git como lo harías normalmente.
-###Finalización de una rama de función
+## Finalización de una rama de función
 Cuando hayas terminado con el trabajo de desarrollo en la función, el siguiente paso es fusionar feature_branch en develop.
 Sin las extensiones de git-flow:
 ```sh
@@ -57,7 +57,7 @@ Con las extensiones de git-flow:
 ```sh
 $ git flow feature finish feature_branch
 ```
-##Ramas de publicación
+## Ramas de publicación
 ![Ramas](https://wac-cdn.atlassian.com/dam/jcr:a9cea7b7-23c3-41a7-a4e0-affa053d9ea7/04%20(1).svg?cdnVersion=1146?raw=true "Ramas")
 Una vez que el desarrollo ha adquirido suficientes funciones para una publicación (o se está acercando una fecha de publicación predeterminada), bifurcas una rama de versión a partir de una de desarrollo. Al crear esta rama, se inicia el siguiente ciclo de publicación, por lo que no pueden añadirse nuevas funciones tras este punto; solo las soluciones de errores, la generación de documentación y otras tareas orientadas a la publicación deben ir en esta rama. Una vez que esté lista para el lanzamiento, la rama de publicación se fusiona en la maestra y se etiqueta con un número de versión. Además, debería volver a fusionarse en la de desarrollo, que podría haber progresado desde que se inició la publicación.
 
@@ -87,7 +87,7 @@ Con las extensiones de git-flow:
 ```sh
 $ git flow release finish '0.1.0'
 ```
-##Ramas de corrección
+## Ramas de corrección
 ![Ramas](https://wac-cdn.atlassian.com/dam/jcr:61ccc620-5249-4338-be66-94d563f2843c/05%20(2).svg?cdnVersion=1146?raw=true "Ramas")
 Las ramas de mantenimiento o "corrección" (hotfix) se utilizan para reparar rápidamente las publicaciones de producción. Las ramas de corrección son muy similares a las ramas de publicación y a las de función, salvo porque se basan en la maestra en vez de la de desarrollo. Es la única rama que debería bifurcarse directamente a partir de la maestra. Una vez que la solución esté completa, debería fusionarse en la maestra y la de desarrollo (o la rama de publicación actual), y la maestra debería etiquetarse con un número de versión actualizado.
 
@@ -112,7 +112,7 @@ git branch -D hotfix_branch
 ```sh
 $ git flow hotfix finish hotfix_branch
 ```
-##Ejemplo
+## Ejemplo
 A continuación, se incluye un ejemplo completo que demuestra un flujo de ramas de función. Vamos a asumir que tenemos una configuración del repositorio con una rama maestra.
 ```sh
 git checkout master
@@ -135,7 +135,7 @@ git merge hotfix_branch
 git checkout master
 git merge hotfix_branch
 ```
-##Resumen
+## Resumen
 El flujo general de Gitflow es el siguiente:
 
 1 - Se crea una rama de desarrollo a partir de la maestra.\
